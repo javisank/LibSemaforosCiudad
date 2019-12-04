@@ -62,35 +62,17 @@ void Semaforo::apagar(int luz)
 
 /* ************ Funciones de la clase SensorLuz ************** */
 
-SensorLuz::SensorLuz(int pin,int valorNoche,int valorDia)
+SensorLuz::SensorLuz(int pin)
 {
 	pinMode(pin,INPUT);
 	_pin = pin;
-	_valorNoche = valorNoche;
-	_valorDia = valorDia;
 }
 
 int SensorLuz::leer()
 {
-	int value;
-	value = analogRead(_pin);
-	if(value<=_valorNoche)
-	{
-		return(NOCHE);
-	}
-	else if(value>=_valorDia)
-	{
-		return(DIA);
-	}
-	return(DIA);
+	return(digitalRead(_pin));	
 }
 
-int SensorLuz::leer_analogico()
-{
-	int value=0;
-	value = analogRead(_pin);
-	return(value);
-}
 
 void SensorLuz::esperar(int estado)
 {
@@ -181,7 +163,7 @@ int contador=0;
 
 //Variables elementos del sistema
 Pulsador pulsador(pin_Pulsador);
-SensorLuz sensor_luz(pin_Sensor_Luz,MINIMO_LUZ,MAXIMO_LUZ);
+SensorLuz sensor_luz(pin_Sensor_Luz);
 Semaforo semaforo1(pin_Semaforo1_rojo,pin_Semaforo1_amarillo,pin_Semaforo1_verde);
 Semaforo semaforo2(pin_Semaforo2_rojo,pin_Semaforo2_amarillo,pin_Semaforo2_verde);
 Semaforo semaforo3(pin_Semaforo3_rojo,pin_Semaforo3_amarillo,pin_Semaforo3_verde);

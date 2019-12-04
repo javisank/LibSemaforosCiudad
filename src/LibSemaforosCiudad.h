@@ -13,8 +13,8 @@
 #define AMARILLO 1
 #define VERDE 2
 
-#define PRESIONADO LOW
-#define NO_PRESIONADO HIGH
+#define PRESIONADO HIGH
+#define NO_PRESIONADO LOW
 
 #define ACTIVADO LOW
 #define DESACTIVADO HIGH
@@ -24,18 +24,22 @@
 
 #define REPETIR(X) for(int i=0;i<X;i++)
 
-const int pin_Semaforo1_rojo = 2;
-const int pin_Semaforo1_amarillo = 3;
-const int pin_Semaforo1_verde = 4;
-const int pin_Semaforo2_rojo = 5;
-const int pin_Semaforo2_amarillo = 6;
-const int pin_Semaforo2_verde = 7;
-const int pin_Semaforo3_rojo = 8;
-const int pin_Semaforo3_amarillo = 9;
-const int pin_Semaforo3_verde = 12;
-const int pin_Semaforo4_rojo = 13;
-const int pin_Semaforo4_amarillo = A0;
-const int pin_Semaforo4_verde = A1;
+//Semaforo 4
+const int pin_Semaforo4_rojo = 2;
+const int pin_Semaforo4_amarillo = 3;
+const int pin_Semaforo4_verde = 4;
+//Semaforo 1
+const int pin_Semaforo1_rojo = 5;
+const int pin_Semaforo1_amarillo = 6;
+const int pin_Semaforo1_verde = 7;
+//Semaforo 2
+const int pin_Semaforo2_rojo = 8;
+const int pin_Semaforo2_amarillo = 9;
+const int pin_Semaforo2_verde = 12;
+//Semaforo 3
+const int pin_Semaforo3_rojo = 13;
+const int pin_Semaforo3_amarillo = A0;
+const int pin_Semaforo3_verde = A1;
 
 const int pin_Pulsador = 11;
 const int pin_Sensor_Luz = 10;
@@ -73,14 +77,11 @@ class Semaforo
 class SensorLuz
 {
 	public:
-		SensorLuz(int pin,int valorNoche,int valorDia);
+		SensorLuz(int pin);
 		int leer();
-		int leer_analogico();
 		void esperar(int estado);
 	private:
 		int _pin;
-		int _valorNoche;
-		int _valorDia;
 };
 
 class Pulsador
