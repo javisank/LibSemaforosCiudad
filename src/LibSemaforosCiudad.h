@@ -91,16 +91,14 @@ class Pulsador
 };
 
 //Variables elementos del sistema
-
-extern Pulsador pulsador;
-extern Sensor sensor_luz;
 extern Semaforo semaforo1;
 extern Semaforo semaforo2;
 extern Semaforo semaforo3;
 extern Semaforo semaforo4;
 
+extern Sensor sensor_luz;
+
+extern Pulsador pulsador;
 
 
 #endif
-
-
