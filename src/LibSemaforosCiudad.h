@@ -16,9 +16,6 @@
 #define PRESIONADO HIGH
 #define NO_PRESIONADO LOW
 
-#define ACTIVADO LOW
-#define DESACTIVADO HIGH
-
 #define NOCHE 0
 #define DIA 1
 
@@ -44,7 +41,6 @@ const int pin_Semaforo3_verde = A1;
 const int pin_Pulsador = 11;
 const int pin_Sensor_Luz = 10;
 
-
 extern void mostrar_cartel(String);
 extern void mostrar_numero(int num);
 extern int ingresar_numero();
@@ -56,7 +52,6 @@ extern void finalizar();
 extern int estado_sensor_luz;
 extern int estado_pulsador;
 extern int numero_ingresado;
-
 
 //Variable Contador
 extern int contador;
@@ -74,14 +69,15 @@ class Semaforo
 	int _pin_verde;
 };
 
-class SensorLuz
+class Sensor
 {
 	public:
-		SensorLuz(int pin);
+		Sensor(int pin);
 		int leer();
 		void esperar(int estado);
 	private:
 		int _pin;
+	
 };
 
 class Pulsador
@@ -97,7 +93,7 @@ class Pulsador
 //Variables elementos del sistema
 
 extern Pulsador pulsador;
-extern SensorLuz sensor_luz;
+extern Sensor sensor_luz;
 extern Semaforo semaforo1;
 extern Semaforo semaforo2;
 extern Semaforo semaforo3;
