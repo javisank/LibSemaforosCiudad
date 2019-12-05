@@ -38,8 +38,8 @@ const int pin_Semaforo3_rojo = 13;
 const int pin_Semaforo3_amarillo = A0;
 const int pin_Semaforo3_verde = A1;
 
-const int pin_Pulsador = 11;
-const int pin_Sensor_Luz = 10;
+const int pin_pulsador = 11;
+const int pin_sensor_ldr = 10;
 
 extern void mostrar_cartel(String);
 extern void mostrar_numero(int num);

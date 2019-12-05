@@ -168,4 +168,4 @@ Semaforo semaforo4(pin_Semaforo4_rojo,pin_Semaforo4_amarillo,pin_Semaforo4_verde
 
 Sensor sensor_luz(pin_sensor_ldr);
 
-Pulsador pulsador(pin_Pulsador);
+Pulsador pulsador(pin_pulsador);
