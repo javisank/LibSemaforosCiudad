@@ -1,4 +1,3 @@
-//Incluyo la libreria de manejo de la estacion Interseccion de Calles.
 #include <LibSemaforosCiudad.h>
 
 void setup() {
